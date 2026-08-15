@@ -34,10 +34,10 @@ def heads_tails():
             print("It was {}, you guessed {}, you lost that round".format(computer_guess,user_guess))
             computer_score +=1
 
-        # if user_score==2:
-        #     print('You won that game')
-        # elif computer_score==2:
-        #     print('You lost that game')
+        if user_score==2:
+            print('{}, You won that game'.format(first_name))
+        elif computer_score==2:
+            print('{}, You lost that game'.format(first_name))
             
     # return 
 
@@ -45,6 +45,9 @@ def heads_tails():
 #---------------------main routine----------------
 
 if __name__ == "__main__":
+    first_name = str(input('What is your name:'))
+    age = int(input('Enter your age:'))
+    print('Hi {}! Welcome to the heads or tails game'.format(first_name))
     choice = heads_tails()
     
     # print(f'this is what i am recieving {choice}')
