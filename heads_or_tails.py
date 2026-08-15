@@ -19,10 +19,15 @@ def heads_tails():
 
     computer_guess = options[choice]
     user_guess = input('Enter H or T: ')
+    
+    print(f'this is what you guessed --> {user_guess}')
+    print(f'this is what the comp guessed --> {computer_guess} {options}')
 
-    # if user_guess == 'H' or user_guess == 'T':
-    #     # ensure only valid guesses pesses through
-    #     print(f'You entered {user_guess}, {computer_guess}')
+    while(True): 
+        if(user_guess in options):
+            break
+        else:
+            user_guess =str(input('Invalid input. Enter H or T in capital: '))
     
     if user_guess == computer_guess:
         print("It was {}, you guessed {}, you won that round".format(computer_guess,user_guess))
@@ -40,7 +45,7 @@ def heads_tails():
 if __name__ == "__main__":
     choice = heads_tails()
     
-    print(f'this is what i am recieving {choice}')
+    # print(f'this is what i am recieving {choice}')
 
 
 
