@@ -15,7 +15,8 @@ def name_check(first_name):
 
     while True:
         if (len(first_name) >= min_name and len(first_name) <= max_name):
-            return first_name
+            if(first_name.isalpha):
+                return first_name
         else:
             print('Your name has an invalid length')
             first_name = input ('Enter your name again between 2 and 10 letters: ')
