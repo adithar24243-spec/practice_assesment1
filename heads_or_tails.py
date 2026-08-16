@@ -22,13 +22,17 @@ def name_check(first_name):
             first_name = input ('Enter your name again between 2 and 10 letters: ')
         
 
-def check_age(age):
+def check_age():
     min_age=6
     while True:
-        if age>=min_age:
-            return age 
-        else:
-            age=int(input('Enter an age above 6: '))
+        try:
+            age=int(input('Enter your age (in years):'))
+            if age>=min_age:
+                return age 
+            else:
+                age=int(input('Enter an age above 6'))
+        except ValueError:
+            age=int(input('Enter an age above 6 as a whole number: '))
 
 def heads_tails():
 
@@ -69,8 +73,7 @@ if __name__ == "__main__":
     first_name = str(input('What is your name:'))
     name_check(first_name)
 
-    age = int(input('Enter your age:'))
-    check_age(age)
+    check_age()
 
     print('Hi {}! Welcome to the heads or tails game'.format(first_name))
     choice = heads_tails()
