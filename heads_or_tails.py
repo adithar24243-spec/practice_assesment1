@@ -8,6 +8,14 @@
 import random 
 
 #---------------------functions-------------------
+def check_age(age):
+    min_age=6
+
+    if age>=min_age:
+        return age 
+    else:
+        age=int(input('Enter an age above 6: '))
+
 def heads_tails():
 
     # Ensure that the player and the computer starts at 0
@@ -47,6 +55,9 @@ def heads_tails():
 if __name__ == "__main__":
     first_name = str(input('What is your name:'))
     age = int(input('Enter your age:'))
+
+    check_age(age)
+
     print('Hi {}! Welcome to the heads or tails game'.format(first_name))
     choice = heads_tails()
     
