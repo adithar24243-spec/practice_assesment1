@@ -10,11 +10,11 @@ import random
 #---------------------functions-------------------
 def check_age(age):
     min_age=6
-
-    if age>=min_age:
-        return age 
-    else:
-        age=int(input('Enter an age above 6: '))
+    while True:
+        if age>=min_age:
+            return age 
+        else:
+            age=int(input('Enter an age above 6: '))
 
 def heads_tails():
 
