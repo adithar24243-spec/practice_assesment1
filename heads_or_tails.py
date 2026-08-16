@@ -8,6 +8,19 @@
 import random 
 
 #---------------------functions-------------------
+
+def name_check(first_name):
+    min_name=2
+    max_name=10
+
+    while True:
+        if (len(first_name) >= min_name and len(first_name) <= max_name):
+            return first_name
+        else:
+            print('Your name has an invalid length')
+            first_name = input ('Enter your name again between 2 and 10 letters: ')
+        
+
 def check_age(age):
     min_age=6
     while True:
@@ -47,15 +60,15 @@ def heads_tails():
         elif computer_score==2:
             print('{}, You lost that game'.format(first_name))
             
-    # return 
 
     
 #---------------------main routine----------------
 
 if __name__ == "__main__":
     first_name = str(input('What is your name:'))
-    age = int(input('Enter your age:'))
+    name_check(first_name)
 
+    age = int(input('Enter your age:'))
     check_age(age)
 
     print('Hi {}! Welcome to the heads or tails game'.format(first_name))
