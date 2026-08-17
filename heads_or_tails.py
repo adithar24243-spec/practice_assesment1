@@ -17,16 +17,16 @@ def name_check(name):
     min_name=2 # minimum name length
     max_name=10 # maximum name length
 
-    while True:
-        if (len(name) >= min_name and len(name) <= max_name):# check if the name has a valid length
-            if(name.isalpha): # check if the name only consists letters
-                return name
+    while (True):
+        if (len(name) >= min_name and len(name) <= max_name and name.isalpha()):# check if the name has a valid length and only has letters
+            return name
+
         else:
-            print('Your name has an invalid length')
+            print('Your name is invalid')
             name = input ('Enter your name again between 2 and 10 letters: ')
         
 """
-* validates the user's age
+* takes and validates the user's age
 * checks that the age is a whole number and meets the minimum age boundary of 6
 * use try and except to handle invalid datatypes without crashing
 """
@@ -40,9 +40,9 @@ def check_age():
             if( min_age <= age and age <=max_age): # boundary check for age requirements
                 return age 
             else:
-                age=int(input('Enter an age between 6 and 60:'))
+                print(f'Your age must be between {min_age} and {max_age}.')
         except:
-            age = int(input('Enter an age between 6 and 60 as a whole number: '))
+            print('Invalid input - the age must be a whole number. ')
 
 """
 * runs the best of 3 heads and tails loop
@@ -90,6 +90,9 @@ if __name__ == "__main__":
     first_name = name_check(name)
 
     check_age()
+    
+    print('Hi {}! Welcome to the heads or tails game'.format(first_name)) 
+
     heads_tails()
 
-    print('Hi {}! Welcome to the heads or tails game'.format(first_name)) 
+    
